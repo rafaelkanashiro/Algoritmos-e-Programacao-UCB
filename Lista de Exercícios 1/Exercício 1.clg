@@ -1,0 +1,28 @@
+algoritmo minutos_e_Segundos;
+// Síntese
+//  Objetivo:  Construa um algoritmo que leia um número inteiro de horas e mostre ao usuário o 
+// correspondente em minutos e segundos destas horas.
+//  Entrada : horas
+//  Saída   : minutos e segundos
+
+
+principal
+	// Declarações
+inteiro horas, minutos, segundos;
+	// Instruções
+escreval ("-----------------------------------------");
+escreval ("| Converter horas em minutos e segundos |");
+escreval ("-----------------------------------------");
+escreva ("> Insira o numero de horas: ");
+leia (horas);
+minutos = horas * 60;
+segundos = horas * 60 * 60;
+se (horas == 1)
+entao
+escreval ("> ", (horas)," hora em minutos são ", minutos," minutos.");
+escreval ("> ", (horas)," hora em segundos são ", segundos, " segundos.");
+senao
+escreval ("> ", (horas)," horas em minutos são ", minutos," minutos.");
+escreval ("> ", (horas)," horas em segundos são ", segundos, " segundos.");
+fimSe
+fimPrincipal
