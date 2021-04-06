@@ -7,17 +7,18 @@ int main(){
 	
 	int quantidadeTotalFios, quantidadeRolos, quantidadeMetros;
 	printf("------------------------------------------------------------------------\n");
-	printf("| Calcular a quantidade de rolos e de metros avulsos de uma construÁ„o |\n");
+	printf("| Calcular a quantidade de rolos e de metros avulsos de uma constru√ß√£o |\n");
 	printf("------------------------------------------------------------------------\n");
 	printf("> Insira a quantidade total de fios: ");
 	scanf("%d", &quantidadeTotalFios);
 	quantidadeRolos = quantidadeTotalFios / 50;
 	quantidadeMetros = quantidadeTotalFios % 50;
 	if (quantidadeRolos == 0) {
-	printf("> S„o necess·rios %d metro(s) avulso(s).\n\n", quantidadeMetros);
+	printf("> S√£o necess√°rios %d metro(s) avulso(s).\n\n", quantidadeMetros);
 		}
-	else printf("> S„o necess·rios %d rolo(s) e %d metro(s) avulso(s).\n\n", quantidadeRolos, quantidadeMetros);
+	else printf("> S√£o necess√°rios %d rolo(s) e %d metro(s) avulso(s).\n\n", quantidadeRolos, quantidadeMetros);
 	
 
 	system("pause");
+	return 0;
  }
