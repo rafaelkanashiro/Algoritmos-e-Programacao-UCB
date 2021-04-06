@@ -9,25 +9,25 @@ int main(){
 	float salarioPorHora, salarioTotal;
 	char nome[50];
 	printf("---------------------------\n");
-	printf("| Dados de um funcionário |\n");
+	printf("| Dados de um funcionÃ¡rio |\n");
 	printf("---------------------------\n");
-	printf("> Insira o nome do funcionário: \n");
-	gets(nome);
+	printf("> Insira o nome do funcionÃ¡rio: \n");
+	fgets(nome, 50, stdin);
 	fflush(stdin);
-	printf("> Insira o sexo do funcionário: \n");
+	printf("> Insira o sexo do funcionÃ¡rio: \n");
 	printf("> Digite 1 para o sexo masculino. \n");
 	printf("> Digite 2 para o sexo feminino. \n");
 	scanf("%d", &sexo);
 	fflush(stdin);
-	printf("> Insira a matrícula do funcionário: \n");
+	printf("> Insira a matrÃ­cula do funcionÃ¡rio: \n");
 	scanf("%d", &matriculaFuncionario);
 	printf("> Insira a quantidade de horas trabalhadas: \n");
 	scanf("%d", &horasTrabalhadas);
-	printf("> Insira o salário por hora: \n");
+	printf("> Insira o salÃ¡rio por hora: \n");
 	scanf("%f", &salarioPorHora);
 	fflush(stdin);
 	printf("\n");
-	printf("> Dados do Funcionário:\n\n");
+	printf("> Dados do FuncionÃ¡rio:\n\n");
 	printf("> Nome Completo: %s\n", nome);
 	if (sexo == 1) {
 	printf("> Sexo: Masculino\n");
@@ -39,9 +39,10 @@ int main(){
 	printf("> Horas Trabalhadas: %d hora\n", horasTrabalhadas);
 		}
 	else printf("> Horas Trabalhadas: %d horas\n", horasTrabalhadas);
-	printf("> Salário Por Hora: R$%0.2f\n", salarioPorHora);
+	printf("> SalÃ¡rio Por Hora: R$%0.2f\n", salarioPorHora);
 	salarioTotal = salarioPorHora * horasTrabalhadas;
-	printf("> Salário Total: R$%0.2f\n\n", salarioTotal);
+	printf("> SalÃ¡rio Total: R$%0.2f\n\n", salarioTotal);
 	
 	system("pause");
+	return 0;
  }
