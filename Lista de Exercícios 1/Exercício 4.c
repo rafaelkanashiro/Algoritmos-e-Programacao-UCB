@@ -7,7 +7,7 @@ int main(){
 	
 	int divisor, dividendo, quociente, resto;
 	printf("-------------------------------------------------\n");
-	printf("| Calcular o quociente e o resto de uma divisão |\n");
+	printf("| Calcular o quociente e o resto de uma divisÃ£o |\n");
 	printf("-------------------------------------------------\n");
 	printf("> Insira o valor do dividendo: ");
 	scanf("%d", &dividendo);
@@ -15,8 +15,9 @@ int main(){
 	scanf("%d", &divisor);
 	resto = dividendo % divisor;
 	quociente = dividendo / divisor;
-	printf("> O resto de %d dividido por %d é %d\n", dividendo, divisor, resto);
-	printf("> O resultado de %d dividido por %d é %d\n\n", dividendo, divisor, quociente);
+	printf("> O resto de %d dividido por %d Ã© %d\n", dividendo, divisor, resto);
+	printf("> O resultado de %d dividido por %d Ã© %d\n\n", dividendo, divisor, quociente);
 	
 	system("pause");
+	return 0;
  }
