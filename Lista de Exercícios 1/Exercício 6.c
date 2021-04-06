@@ -7,7 +7,7 @@ int main(){
 	
 	double A, B, MEDIA;
 	printf("-------------------------------------------------\n");
-	printf("| Calcular a mÈdia de uma nota de um aluno      |\n");
+	printf("| Calcular a m√©dia de uma nota de um aluno      |\n");
 	printf("-------------------------------------------------\n");
 	printf("> Insira o valor da nota A: ");
 	scanf("%lf", &A);
@@ -15,13 +15,14 @@ int main(){
 	scanf("%lf", &B);
 	MEDIA = (A * 3.5 + B * 7.5)/11;
 	if (MEDIA < 0) {
-	printf("> Valor inv·lido! Insira um valor igual ou maior que 0.\n\n");
+	printf("> Valor inv√°lido! Insira um valor igual ou maior que 0.\n\n");
 		}
 	else if (MEDIA > 10) {
-	printf("> Valor inv·lido! Insira um valor igual ou menor que 10.\n\n");
+	printf("> Valor inv√°lido! Insira um valor igual ou menor que 10.\n\n");
 		}
-	else { printf("> O valor da mÈdia das notas A e B do aluno È %0.1lf.\n\n", MEDIA);
+	else { printf("> O valor da m√©dia das notas A e B do aluno √© %0.1lf.\n\n", MEDIA);
 		}
 	
 	system("pause");
+	return 0;
  }
