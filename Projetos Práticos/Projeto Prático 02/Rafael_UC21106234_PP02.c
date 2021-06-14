@@ -29,11 +29,11 @@ int main(){
 	int menuOpcoes;
 	//Verificar assentos
 	char disponibilidade[10][20];
-    int i = 0, j = 0, contador = 0, assentos[10][20], assentoEscolhido;
-    //Efetuar uma reserva
-    int id = 0, idMatriz[10][20], idCliente;
-    //Relatório do voo
-    int assentosDisponiveis = 0, assentosReservados = 0, assentosConfirmados = 0;
+	int i = 0, j = 0, contador = 0, assentos[10][20], assentoEscolhido;
+	//Efetuar uma reserva
+	int id = 0, idMatriz[10][20], idCliente;
+	//Relatório do voo
+	int assentosDisponiveis = 0, assentosReservados = 0, assentosConfirmados = 0;
 	
 	//Colocando a cor branca nos textos
 	printf(BHWHT);
@@ -45,18 +45,18 @@ int main(){
 	
 	//Informações iniciais como: destino, quantidade de assentos e valor da passagem
 	do{
-		printf("> Qual o nome do destino? \n> ");
+		printf("> Informe o nome do destino: \n> ");
 		fgets(nomeDestino, 60, stdin);
 		fflush(stdin);
 	}while(strlen(nomeDestino) == 0 || nomeDestino[0] == '\r' || nomeDestino[0] == '\n');
 	
 	do{
-		printf("\n> Qual a quantidade de assentos existentes no avião selecionado para o destino? (Mín. 90 - Máx. 200) \n> ");
+		printf("\n> Informe a quantidade de assentos existentes no avião selecionado para o destino: (Mín. 90 - Máx. 200) \n> ");
 		scanf("%d", &quantAssentos);
 		fflush(stdin);
 	}while(quantAssentos < 90 || quantAssentos > 200);
 	
-	printf("\n> Qual o valor da passagem? \n> ");
+	printf("\n> Informe o valor da passagem: \n> ");
 	scanf("%f", &valorPassagem);
 	fflush(stdin);
 	
@@ -67,13 +67,13 @@ int main(){
             assentos[i][j] = contador;
         }
     }
-    for (i = 0; i < 10; i++){
-        for (j = 0; j < 20; j++){
-            if (assentos[i][j] <= quantAssentos){
-                disponibilidade[i][j] = 'D';
-            }
-    	}  
-    }
+	for (i = 0; i < 10; i++){
+		for (j = 0; j < 20; j++){
+			if (assentos[i][j] <= quantAssentos){
+				disponibilidade[i][j] = 'D';
+			}
+		}  
+	}
 	
 	system("cls");
 	
@@ -115,13 +115,13 @@ int main(){
             			if(assentos[i][j] <= contador && (disponibilidade[i][j] == 'D' || disponibilidade[i][j] == 'R' || disponibilidade[i][j] == 'C')){
                 			//Se o assento estiver disponível irá apresentar a letra D com a cor verde
 							if (disponibilidade[i][j]== 'D'){
-                    			printf(GREEN "%.3d ", assentos[i][j]);
-                    			printf("%c ", disponibilidade[i][j]);
-                			}
+								printf(GREEN "%.3d ", assentos[i][j]);
+								printf("%c ", disponibilidade[i][j]);
+							}
 							//Se o assento estiver reservado irá apresentar a letra R com a cor vermelha
 							else if (disponibilidade[i][j] == 'R'){
-                    			printf(RED "%.3d ", assentos[i][j]);
-                    			printf("%c ", disponibilidade[i][j]);
+								printf(RED "%.3d ", assentos[i][j]);
+								printf("%c ", disponibilidade[i][j]);
                 			}
                 			//Se o assento estiver confirmado irá apresentar a letra C com a cor azul
 							else if (disponibilidade[i][j]== 'C') {
@@ -132,14 +132,14 @@ int main(){
             		} 
         		printf("\n");
         		}
-        	printf(BHWHT "\n> Disponibilidade de assentos:" RESET);
+				printf(BHWHT "\n> Disponibilidade de assentos:" RESET);
+			
+				printf(GREEN "\n> Verde - Disponível." RESET);
+				printf(RED "\n> Vermelho - Reservado." RESET);
+				printf(BLUE "\n> Azul - Confirmado.\n\n" RESET);
         
-        	printf(GREEN "\n> Verde - Disponível." RESET);
-        	printf(RED "\n> Vermelho - Reservado." RESET);
-        	printf(BLUE "\n> Azul - Confirmado.\n\n" RESET);
-        
-        	system("pause");
-        	system("cls");
+				system("pause");
+				system("cls");
 				break;
 			case 2:
 				//Efetuar uma reserva
@@ -165,41 +165,40 @@ int main(){
 				valorTotalPassagens = valorPassagemDesconto + valorPassagemSemDesconto;
 				quantidadeTotalPassagens = passagensDesconto + passagensSemDesconto;
 				
-        		system("cls");
+				system("cls");
         		
 				printf("+---------------------+\n");
 				printf("| Efetuar uma reserva |\n");
 				printf("+---------------------+\n\n");
         
-        		id++;
+				id++;
         	
-        		for(j = 0; j < 20; j++){
-        			for(i = 0; i < 10; i++){
-            			if(assentos[i][j] <= quantAssentos && (disponibilidade[i][j] == 'D' || disponibilidade[i][j] == 'R' || disponibilidade[i][j] == 'C')){
-                			if(disponibilidade[i][j] == 'D'){
-                    			printf(GREEN "%.3d ", assentos[i][j]);
-                    			printf("%c ", disponibilidade[i][j]);
-                			}
+				for(j = 0; j < 20; j++){
+					for(i = 0; i < 10; i++){
+						if(assentos[i][j] <= quantAssentos && (disponibilidade[i][j] == 'D' || disponibilidade[i][j] == 'R' || disponibilidade[i][j] == 'C')){
+							if(disponibilidade[i][j] == 'D'){
+								printf(GREEN "%.3d ", assentos[i][j]);
+								printf("%c ", disponibilidade[i][j]);
+							}
 							else if(disponibilidade[i][j] == 'R'){
-	                    		printf(RED "%.3d ", assentos[i][j]);
-	                    		printf("%c ", disponibilidade[i][j]);
- 		               		}
+								printf(RED "%.3d ", assentos[i][j]);
+								printf("%c ", disponibilidade[i][j]);
+							}
 							else if(disponibilidade[i][j] == 'C'){
-                        			printf(BLUE "%.3d ", assentos[i][j]);
-                        			printf("%c ", disponibilidade[i][j]);
-                        		
-                			}
-            			}
-        			} 
-        		printf("\n");       
-        		}
-        	
-        		printf(BHWHT "\n> Informe o assento escolhido: \n> ");
-        		scanf("%d", &assentoEscolhido);
-        		fflush(stdin);
-        	
+									printf(BLUE "%.3d ", assentos[i][j]);
+									printf("%c ", disponibilidade[i][j]);
+							}
+						}
+					} 
+				printf("\n");       
+				}
+				
+				printf(BHWHT "\n> Informe o assento escolhido: \n> ");
+				scanf("%d", &assentoEscolhido);
+				fflush(stdin);
+        		
 				system("cls");
-			
+				
 				printf("+---------------------+\n");
 				printf("| Efetuar uma reserva |\n");
 				printf("+---------------------+\n\n");
@@ -209,116 +208,116 @@ int main(){
             			if(assentos[i][j] == assentoEscolhido){
                 			disponibilidade[i][j] = 'R';
                 			idMatriz[i][j] = id;
-                		} 
-            		}       
-        		}
+						} 
+					}       
+				}
         
-        		for(j = 0; j < 20; j++){
-        			for(i = 0; i < 10; i++){
-            			if(assentos[i][j] <= quantAssentos && (disponibilidade[i][j] == 'D' || disponibilidade[i][j] == 'R' || disponibilidade[i][j] == 'C')){
-                			if(disponibilidade[i][j] == 'D'){
-                    			printf(GREEN "%.3d ", assentos[i][j]);
-                    			printf("%c ", disponibilidade[i][j]);
-                    		}
+				for(j = 0; j < 20; j++){
+					for(i = 0; i < 10; i++){
+						if(assentos[i][j] <= quantAssentos && (disponibilidade[i][j] == 'D' || disponibilidade[i][j] == 'R' || disponibilidade[i][j] == 'C')){
+							if(disponibilidade[i][j] == 'D'){
+								printf(GREEN "%.3d ", assentos[i][j]);
+								printf("%c ", disponibilidade[i][j]);
+							}
 							else if(disponibilidade[i][j] == 'R'){
-                    			printf(RED "%.3d ", assentos[i][j]);
-                    			printf("%c ", disponibilidade[i][j]);
-                			}
+								printf(RED "%.3d ", assentos[i][j]);
+								printf("%c ", disponibilidade[i][j]);
+							}
 							else if(disponibilidade[i][j] == 'C'){
-                        		printf(BLUE "%.3d ", assentos[i][j]);
-                        		printf("%c ", disponibilidade[i][j]);
-                        	}
-                		}
-            		} 
-        		printf("\n");       
-        		}
-        		//Informar o assento escolhido e o número da reserva
-        		printf(BHWHT);
+								printf(BLUE "%.3d ", assentos[i][j]);
+								printf("%c ", disponibilidade[i][j]);
+							}
+						}
+					} 
+				printf("\n");       
+				}
+				//Informar o assento escolhido e o número da reserva
+				printf(BHWHT);
+				
+				if(idadePassageiros <= 5)
+				printf("\n> Foi reservada uma passagem com desconto no valor total de R$%0.2f.", valorPassagemDesconto);
+				else
+				printf("\n> Foi reservada uma passagem sem desconto no valor total de R$%0.2f.", valorPassagemSemDesconto);
         		
-        		if(idadePassageiros <= 5)
-        		printf("\n> Foi reservada uma passagem com desconto no valor total de R$%0.2f.", valorPassagemDesconto);
-        		else
-        		printf("\n> Foi reservada uma passagem sem desconto no valor total de R$%0.2f.", valorPassagemSemDesconto);
+				printf("\n> O assento escolhido foi o %d e o número da reserva é %d.", assentoEscolhido, id);
+				printf("\n> ** Guarde o número da reserva pois ele será necessário para confirmar ou cancelar a passagem. **\n\n");
         		
-        		printf("\n> O assento escolhido foi o %d e o número da reserva é %d.", assentoEscolhido, id);
-        		printf("\n> ** Guarde o número da reserva pois ele será necessário para confirmar ou cancelar a passagem. **\n\n");
-        		
-        		system("pause");
-        		system("cls");
+				system("pause");
+				system("cls");
 				break;
 			case 3:
 				//Confirmar uma reserva
-        		system("cls"); 
-        		
-        		printf("+-----------------------+\n");
+				system("cls"); 
+				
+				printf("+-----------------------+\n");
 				printf("| Confirmar uma reserva |\n");
 				printf("+-----------------------+\n\n");
         		
 				printf("> Informe o número da reserva para a confirmar: \n> ");
         
 				do{
-        			scanf("%d", &idCliente);
-            		if(idCliente > id){
-                		printf("\n> Número de reserva não cadastrado, insira um número de reserva válido: \n> ");
-            		}
-        		}while(idCliente > id);
+					scanf("%d", &idCliente);
+					if(idCliente > id){
+						printf("\n> Número de reserva não cadastrado, insira um número de reserva válido: \n> ");
+					}
+				}while(idCliente > id);
         		
-        		for(j = 0; j < 20; j++){
-            		for(i = 0; i < 10; i++){
-                		if(idMatriz[i][j] == idCliente && disponibilidade[i][j] == 'R'){
-                    		disponibilidade[i][j] = 'C';
-                		}
-            		}
-        		}
-        		printf("\n> Reserva %d confirmada com sucesso!\n\n", idCliente);
+				for(j = 0; j < 20; j++){
+					for(i = 0; i < 10; i++){
+						if(idMatriz[i][j] == idCliente && disponibilidade[i][j] == 'R'){
+							disponibilidade[i][j] = 'C';
+						}
+					}
+				}
+				printf("\n> Reserva %d confirmada com sucesso!\n\n", idCliente);
         		
-        		system("pause");
-        		system("cls");
+				system("pause");
+				system("cls");
 				break;
 			case 4:
 				//Cancelar uma reserva
 				system("cls");
         
-        		printf("+----------------------+\n");
+				printf("+----------------------+\n");
 				printf("| Cancelar uma reserva |\n");
 				printf("+----------------------+\n\n");
         		
 				printf("> Informe o número da reserva para a cancelar: \n> ");
         
 				do{
-        			scanf("%d", &idCliente);
-            		if(idCliente > id){
-                	printf("\n> Número de reserva não cadastrado, insira um número de reserva válido: \n> ");
-            		}
-        		}while(idCliente > id);
+					scanf("%d", &idCliente);
+					if(idCliente > id){
+					printf("\n> Número de reserva não cadastrado, insira um número de reserva válido: \n> ");
+					}
+				}while(idCliente > id);
         		
-        		for(j = 0; j < 20; j++){
-            		for(i = 0; i < 10; i++){
-                		if(idMatriz[i][j] == idCliente && (disponibilidade[i][j] == 'R' ||disponibilidade[i][j] == 'C')){
-                    		disponibilidade[i][j] = 'D';
-                		}
-            		}     
-        		}
-        		printf("\n> Reserva %d cancelada com sucesso!\n\n", idCliente);
+				for(j = 0; j < 20; j++){
+					for(i = 0; i < 10; i++){
+						if(idMatriz[i][j] == idCliente && (disponibilidade[i][j] == 'R' ||disponibilidade[i][j] == 'C')){
+							disponibilidade[i][j] = 'D';
+						}
+					}     
+				}
+				printf("\n> Reserva %d cancelada com sucesso!\n\n", idCliente);
         		
-        		system("pause");
-        		system("cls");
+				system("pause");
+				system("cls");
 				break;
 			case 5:
 				//Relatório do voo
 				system("cls");
 				
 				for(j = 0; j < 20; j++){
-            		for(i = 0; i < 10; i++){
-                		if(assentos[i][j] <= contador && (disponibilidade[i][j] == 'D' || disponibilidade[i][j] == 'R' || disponibilidade[i][j] == 'C')){
-                    		if(disponibilidade[i][j] == 'D')
-                        		assentosDisponiveis++;
+					for(i = 0; i < 10; i++){
+						if(assentos[i][j] <= contador && (disponibilidade[i][j] == 'D' || disponibilidade[i][j] == 'R' || disponibilidade[i][j] == 'C')){
+							if(disponibilidade[i][j] == 'D')
+								assentosDisponiveis++;
 							else if(disponibilidade[i][j] == 'R')
-                        		assentosReservados++;
+								assentosReservados++;
 							else if(disponibilidade[i][j]=='C')
-                        		assentosConfirmados++;
-    					}
-        			}
+								assentosConfirmados++;
+						}
+					}
 				}
 				
 				printf("+------------------+\n");
@@ -332,7 +331,7 @@ int main(){
 				printf("> São %d passagens no valor total de R$%0.2f.\n\n", quantidadeTotalPassagens, valorTotalPassagens);
 				
 				system("pause");
-        		system("cls");
+				system("cls");
 				break;
 			case 6:
 				//Finalizar o programa
